@@ -4,7 +4,7 @@ import sys
 import os
 
 
-def main(markdown_file, output_file):
+def convert_markdown_to_html(markdown_file, output_file):
     """Converts a Markdown file to HTML.
 
     Expects two arguments:
@@ -17,9 +17,13 @@ def main(markdown_file, output_file):
         print("Missing {}".format(sys.argv[1]), file=sys.stderr)
         sys.exit(1)
 
+
+if __name__ == "__main__":
+
     # Check for correct number of arguments
     if len(sys.argv) < 3:
-        print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
+        print("Usage: ./markdown2html.py README.md README.html",
+              file=sys.stderr)
         sys.exit(1)
 
     # Extract name file
@@ -27,11 +31,7 @@ def main(markdown_file, output_file):
     output_file = sys.argv[2]
 
     # Convert Markdown to HTML
-    main(markdown_file, output_file)
+    convert_markdown_to_html(markdown_file, output_file)
 
     # Successful execution, no output message needed
     sys.exit(0)
-
-
-if __name__ == "__main__":
-    main()
